@@ -1,0 +1,68 @@
+# BasicProductoFlow
+
+main: kit: flow: BasicProductoFlow:
+{
+  entity: "producto",
+  kind: "basic",
+  name: "BasicProductoFlow",
+  step: [
+    {
+      i: {
+        ref: "producto_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "producto_ref01",
+        srcdatavar: "producto_ref01_data",
+        suffix: "_up0",
+        textfield: "nombre"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-producto_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "producto_ref01",
+        srcdatavar: "producto_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-producto_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "producto_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "producto01"
+      }
+
+      o: "remove"
+    }
+  ],
+  "key$": "BasicProductoFlow"
+}

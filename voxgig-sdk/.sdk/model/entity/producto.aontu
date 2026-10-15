@@ -1,0 +1,279 @@
+# Entity: producto
+
+main: kit: entity: producto: {
+
+  alias: field: {}
+
+  fields: {
+    categoria: {
+      h: "Categoria"
+      n: "categoria"
+      r: false
+      t: "`$OBJECT`"
+    }
+    embedded: {
+      h: "Embedded"
+      n: "embedded"
+      r: false
+      t: "`$OBJECT`"
+    }
+    id: {
+      fo: "int64"
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$INTEGER`"
+    }
+    links: {
+      h: "Links"
+      n: "links"
+      r: false
+      t: "`$OBJECT`"
+    }
+    nombre: {
+      h: "Nombre"
+      n: "nombre"
+      r: false
+      t: "`$STRING`"
+    }
+    precio: {
+      fo: "double"
+      h: "Precio"
+      n: "precio"
+      r: false
+      t: "`$NUMBER`"
+    }
+    stock: {
+      h: "Stock"
+      n: "stock"
+      r: false
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "producto"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "categoria"
+            "id"
+            "links"
+            "nombre"
+            "precio"
+            "stock"
+          ]
+          co: {
+            id: "POST /api/productos"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/productos"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "productos"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/productos/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/productos/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "productos"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/productos"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/api/productos"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "productos"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /api/productos/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/productos/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "productos"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          bf: [
+            "categoria"
+            "id"
+            "links"
+            "nombre"
+            "precio"
+            "stock"
+          ]
+          co: {
+            id: "PUT /api/productos/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/api/productos/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "productos"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

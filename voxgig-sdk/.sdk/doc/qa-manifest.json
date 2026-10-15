@@ -1,0 +1,14 @@
+{
+  "files": [
+    "SUMMARY.md"
+  ],
+  "config": ".sdk/doc/qa/vale.ini",
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Deleted",
+      "Focused authentication and product surface of Lucas Aviles’ MiniMarket Plus Spring Boot learning project. Paths and fields transcribed from the existing controllers; not the entire backend.",
+      "Successful response"
+    ]
+  }
+}

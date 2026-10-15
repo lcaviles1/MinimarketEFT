@@ -1,0 +1,13 @@
+# Project-owned metadata. This overlay survives re-scaffolding.
+main: kit: {
+  author: {
+    name: 'Lucas Avilés Arias'
+    url: 'https://github.com/lcaviles1'
+  }
+  publisher: {
+    name: 'Lucas Avilés Arias'
+    url: 'https://github.com/lcaviles1'
+  }
+  repo: path: 'lcaviles1/MinimarketEFT'
+  target: ts: publish: registry: package: '@lcaviles1/minimarket-sdk'
+}

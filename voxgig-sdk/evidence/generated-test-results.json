@@ -1,0 +1,12 @@
+{
+  "tests": 218,
+  "suites": 28,
+  "passed": 209,
+  "failed": 0,
+  "skipped": 9,
+  "cancelled": 0,
+  "todo": 0,
+  "command": "npm test (generated TypeScript target)",
+  "node": "24.19.0",
+  "sdkgen": "4.34.7"
+}

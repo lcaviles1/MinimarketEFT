@@ -1,0 +1,58 @@
+{
+  "testedAt": "2026-10-15T20:29:28.874Z",
+  "backend": "real Spring Boot + H2; no HTTP mock",
+  "scope": "login + products only",
+  "results": [
+    {
+      "scenario": "Unauthenticated request rejected",
+      "result": "passed",
+      "httpStatus": 401
+    },
+    {
+      "scenario": "Login through generated SDK direct()",
+      "result": "passed",
+      "httpStatus": 200
+    },
+    {
+      "scenario": "Authenticated HAL collection read",
+      "result": "passed",
+      "httpStatus": 200
+    },
+    {
+      "scenario": "Generated Producto.load() reads real product",
+      "result": "passed",
+      "httpStatus": 200
+    },
+    {
+      "scenario": "Generated Producto.create()",
+      "result": "passed",
+      "httpStatus": 200
+    },
+    {
+      "scenario": "Generated Producto.update()",
+      "result": "passed",
+      "httpStatus": 200
+    },
+    {
+      "scenario": "Read-only user can read but cannot create products",
+      "result": "passed",
+      "readStatus": 200,
+      "deniedStatus": 401,
+      "rawHttpStatus": 401,
+      "note": "Backend also returns 401 for a valid user with insufficient role; 403 would be clearer."
+    },
+    {
+      "scenario": "Generated Producto.remove() and subsequent 404",
+      "result": "passed",
+      "httpStatus": 404
+    },
+    {
+      "scenario": "Collection is currently exposed through load(), not list()",
+      "result": "passed",
+      "dataKeys": [
+        "_embedded",
+        "_links"
+      ]
+    }
+  ]
+}

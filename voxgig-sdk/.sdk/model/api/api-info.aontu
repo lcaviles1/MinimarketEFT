@@ -1,0 +1,38 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      description: "Focused authentication and product surface of Lucas Aviles’ MiniMarket Plus Spring Boot learning project. Paths and fields transcribed from the existing controllers; not the entire backend."
+      security: {
+        exchange: {
+          method: "POST"
+          path: "api/auth/login"
+          request: "password"
+          response: "token"
+        }
+        in: "header"
+        name: "Authorization"
+        prefix: "Bearer"
+        scheme: "bearerAuth"
+        type: "http"
+      }
+      servers: [
+        {
+          url: "{base}"
+          variables: {
+            base: {
+              default: "http://127.0.0.1:18765"
+              description: "Local MiniMarket base URL"
+            }
+          }
+        }
+      ]
+      summary: "Focused authentication and product surface of Lucas Aviles’ MiniMarket Plus Spring Boot learning project."
+      title: "MiniMarket Products API"
+      version: "1.0.0"
+    }
+  }
+}
+

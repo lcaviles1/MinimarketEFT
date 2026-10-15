@@ -1,0 +1,4 @@
+Initial integration run: authenticated CLIENTE POST /api/productos returned 401,
+while the initial assertion expected 403. The subsequent verification compares
+SDK and raw HTTP responses and separately confirms that the same user can GET
+products. This distinguishes backend response semantics from an SDK defect.

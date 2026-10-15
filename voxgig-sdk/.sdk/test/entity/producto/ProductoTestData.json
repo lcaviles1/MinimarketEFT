@@ -1,0 +1,72 @@
+{
+  "existing": {
+    "producto": {
+      "PRODUCTO00": {
+        "categoria": {},
+        "embedded": {},
+        "id": "PRODUCTO00",
+        "links": {},
+        "nombre": "s4a",
+        "precio": 75,
+        "stock": 76
+      },
+      "PRODUCTO01": {
+        "categoria": {},
+        "embedded": {},
+        "id": "PRODUCTO01",
+        "links": {},
+        "nombre": "s90",
+        "precio": 145,
+        "stock": 146
+      },
+      "PRODUCTO02": {
+        "categoria": {},
+        "embedded": {},
+        "id": "PRODUCTO02",
+        "links": {},
+        "nombre": "sd6",
+        "precio": 215,
+        "stock": 216
+      }
+    }
+  },
+  "new": {
+    "producto": {
+      "producto_ref01": {
+        "categoria": {},
+        "embedded": {},
+        "links": {},
+        "nombre": "s11c",
+        "precio": 285,
+        "stock": 286
+      }
+    }
+  },
+  "requests": {
+    "POST /api/productos": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/productos/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/productos": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/productos/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /api/productos/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}
